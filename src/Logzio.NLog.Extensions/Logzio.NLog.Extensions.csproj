@@ -15,6 +15,7 @@
     <PackageTags>logzio nlog extension configuration</PackageTags>
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
