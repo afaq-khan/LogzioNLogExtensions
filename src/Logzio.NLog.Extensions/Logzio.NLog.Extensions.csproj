@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>default</LangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Title>Logzio.NLog.Extensions</Title>
     <Authors>Afaq Khan</Authors>
     <Description>A logging extension to simplify configuration of Logzio's NLog package for sending log entries to Logz.io</Description>
