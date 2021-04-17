@@ -11,7 +11,7 @@ dotnet_csproj:
   patch: true
   file: '**\*.csproj'
   version: '1.0.{build}'
-  package_version: $(APPVEYOR_BUILD_VERSION)
+  package_version: '{version}'
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
