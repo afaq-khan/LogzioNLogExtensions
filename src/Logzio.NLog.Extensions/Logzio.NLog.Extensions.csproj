@@ -13,7 +13,8 @@
     <RepositoryUrl>https://github.com/afaq-khan/LogzioNLogExtensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>logzio nlog extension configuration</PackageTags>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
