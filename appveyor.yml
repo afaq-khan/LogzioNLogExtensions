@@ -4,7 +4,20 @@ pull_requests:
 branches:
   only:
   - main
+configuration: Release
+platform: Any CPU
 clone_depth: 1
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  version_prefix: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+before_build:
+- cmd: dotnet restore
 build:
   project: Logzio.NLog.Extension.sln
   verbosity: minimal
