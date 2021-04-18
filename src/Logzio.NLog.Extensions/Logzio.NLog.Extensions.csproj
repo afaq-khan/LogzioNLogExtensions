@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>default</LangVersion>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Title>Logzio.NLog.Extensions</Title>
     <Authors>Afaq Khan</Authors>
     <Description>A logging extension to simplify configuration of Logzio's NLog package for sending log entries to Logz.io</Description>
