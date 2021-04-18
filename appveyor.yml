@@ -17,8 +17,6 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 nuget:
-  account_feed: true
-  project_feed: true
   disable_publish_on_pr: true
 before_build:
 - cmd: dotnet restore Logzio.NLog.Extension.sln
