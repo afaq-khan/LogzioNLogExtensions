@@ -18,16 +18,11 @@ dotnet_csproj:
   informational_version: '{version}'
 nuget:
   disable_publish_on_pr: true
-before_build:
-- cmd: dotnet restore Logzio.NLog.Extension.sln
 build:
-  project: Logzio.NLog.Extension.sln
-  publish_nuget: true
+  project: Logzio.NLog.Extension.csproj
   verbosity: minimal
-after_test:
-- cmd: dotnet pack src\Logzio.NLog.Extensions\ -c Release
 artifacts:
-- path: '*.nupkg'
+- path: '**\*.nupkg'
   name: LogzioNLogExtensions
 deploy:
 - provider: NuGet
