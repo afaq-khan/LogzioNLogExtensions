@@ -21,7 +21,7 @@ nuget:
   project_feed: true
   disable_publish_on_pr: true
 before_build:
-- cmd: dotnet restore
+- cmd: dotnet restore Logzio.NLog.Extension.sln
 build:
   project: Logzio.NLog.Extension.sln
   publish_nuget: true
