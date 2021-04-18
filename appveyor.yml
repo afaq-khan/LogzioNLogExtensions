@@ -4,6 +4,7 @@ pull_requests:
 branches:
   only:
   - main
+skip_non_tags: true
 configuration: Release
 platform: Any CPU
 clone_depth: 1
@@ -21,8 +22,8 @@ nuget:
 before_build:
 - cmd: dotnet restore Logzio.NLog.Extension.sln /p:Configuration=Release /p:Platform="Any CPU"
 build:
-  project: src\Logzio.NLog.Extensions\Logzio.NLog.Extensions.csproj
-  verbosity: minimal
+  project: src\Logzio.NLog.Extensions\Logzio.NLog.Extension.csproj
+  verbosity: detailed
 test:
   assemblies:
     only:
