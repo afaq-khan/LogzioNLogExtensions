@@ -24,6 +24,7 @@ before_build:
 - cmd: dotnet restore
 build:
   project: Logzio.NLog.Extension.sln
+  publish_nuget: true
   verbosity: minimal
 after_test:
 - cmd: dotnet pack src\Logzio.NLog.Extensions\ -c Release
