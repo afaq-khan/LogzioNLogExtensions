@@ -19,8 +19,13 @@ dotnet_csproj:
 nuget:
   disable_publish_on_pr: true
 build:
-  project: Logzio.NLog.Extension.csproj
+  project: '**\Logzio.NLog.Extension.csproj'
+  publish_nuget: true
   verbosity: minimal
+test:
+  assemblies:
+    only:
+    - '**\*Tests.csproj'
 artifacts:
 - path: '**\*.nupkg'
   name: LogzioNLogExtensions
