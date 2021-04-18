@@ -11,10 +11,15 @@ dotnet_csproj:
   patch: true
   file: '**\*.csproj'
   version: '{version}'
+  version_prefix: '{version}'
   package_version: '{version}'
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true
 before_build:
 - cmd: dotnet restore
 build:
@@ -22,11 +27,14 @@ build:
   verbosity: minimal
 after_test:
 - cmd: dotnet pack src\Logzio.NLog.Extensions\ -c Release
+artifacts:
+- path: '*.nupkg'
+  name: LogzioNLogExtensions
 deploy:
 - provider: NuGet
   api_key:
     secure: pS/lyHg6LcDkR995HR5EUxEgF4W8124Zl6vmBZSJJurU/mPxPTSYms9wBXzNp5FP
   skip_symbols: false
-  artifact: /.*(\.|\.s)nupkg/
+  artifact: LogzioNLogExtensions
   on:
     branch: main
