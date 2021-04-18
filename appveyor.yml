@@ -9,7 +9,7 @@ platform: Any CPU
 clone_depth: 1
 dotnet_csproj:
   patch: true
-  file: 'src\Logzio.NLog.Extensions\Logzio.NLog.Extensions.csproj'
+  file: '**\*.csproj'
   version: '{version}'
   version_prefix: '{version}'
   package_version: '{version}'
@@ -18,14 +18,17 @@ dotnet_csproj:
   informational_version: '{version}'
 nuget:
   disable_publish_on_pr: true
+before_build:
+- cmd: dotnet restore *.sln
 build:
-  project: 'src\Logzio.NLog.Extensions\Logzio.NLog.Extensions.csproj'
-  publish_nuget: true
+  project: src\Logzio.NLog.Extensions\Logzio.NLog.Extension.csproj
   verbosity: minimal
 test:
   assemblies:
     only:
-    - 'tests\Logzio.NLog.Extensions.Tests\Logzio.NLog.Extensions.Tests.csproj'
+    - tests\Logzio.NLog.Extensions.Tests\Logzio.NLog.Extensions.Tests.csproj
+after_test:
+- cmd: dotnet pack src\Logzio.NLog.Extensions\Logzio.NLog.Extensions.csproj
 artifacts:
 - path: '**\*.nupkg'
   name: LogzioNLogExtensions
