@@ -19,7 +19,7 @@ dotnet_csproj:
 nuget:
   disable_publish_on_pr: true
 before_build:
-- cmd: dotnet restore *.sln
+- cmd: dotnet restore **\*.sln
 build:
   project: src\Logzio.NLog.Extensions\Logzio.NLog.Extension.csproj
   verbosity: minimal
