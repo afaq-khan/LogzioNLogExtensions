@@ -23,9 +23,9 @@ before_build:
 - cmd: dotnet restore Logzio.NLog.Extension.sln /p:Configuration=Release /p:Platform="Any CPU"
 build_script:
  - dotnet tool install --global dotnet-sonarscanner --version 5.2
- - SonarScanner.MSBuild.exe begin /k:"LogzioNLogExtensions" /d:"sonar.host.url=https://sonarcloud.io" /o:"afaq-khan" /d:"sonar.login={SONAR_TOKEN}"
- - msbuild /verbosity:quiet "Logzio.NLog.Extensions.sln"
- - SonarScanner.MSBuild.exe end /d:"sonar.login={SONAR_TOKEN}"
+ - dotnet sonarscanner begin /k:"LogzioNLogExtensions"  /d:sonar.login={SONAR_TOKEN}
+ - dotnet build Logzio.NLog.Extensions.sln
+ - dotnet sonarscanner end /d:sonar.login={SONAR_TOKEN}
 test:
   assemblies:
     only:
