@@ -21,7 +21,7 @@ nuget:
 before_build:
 - cmd: dotnet restore Logzio.NLog.Extension.sln /p:Configuration=Release /p:Platform="Any CPU"
 build:
-  project: src\Logzio.NLog.Extensions\Logzio.NLog.Extension.csproj
+  project: src\Logzio.NLog.Extensions\Logzio.NLog.Extensions.csproj
   verbosity: minimal
 test:
   assemblies:
