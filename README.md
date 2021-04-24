@@ -36,6 +36,6 @@ Install the package from the Package Manager Console:
 ```csharp
 IServiceCollection services = new ServiceCollection();
 services.AddLogging(builder =>
-                builder.AddLogzioNLog(
-                    configuration.GetSection("Logging").GetSection("LogzioNLog").GetSection("Options")));
+    builder.AddLogzioNLog(
+        configuration.GetSection("Logging").GetSection("LogzioNLog").GetSection("Options")));
 ```
