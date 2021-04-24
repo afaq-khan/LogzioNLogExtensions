@@ -24,12 +24,19 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --blame --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=opencover.xml
-    - name: Scan
-      uses: sonarsource/sonarcloud-github-action@master
+    - name: Sonar Scan
+      uses: highbyte/sonarscan-dotnet@2.0
       with:
-        args: >
-           -Dsonar.organization=afaq-khan
-           -Dsonar.projectKey=LogzioNLogExtensions
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # The key of the SonarQube project
+        sonarProjectKey: LogzioNLogExtensions
+        # The name of the SonarQube project
+        sonarProjectName:  LogzioNLogExtensions
+        # The name of the SonarQube organization in SonarCloud. For hosted SonarQube, skip this setting.
+        sonarOrganization: afaq-khan
+        # Optional command arguments to dotnet test
+        dotnetTestArguments: --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        # Optional extra command arguments the the SonarScanner 'begin' command
+        sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"        
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
