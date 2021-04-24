@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    -​ name​: ​SonarScanner for .NET 5 with pull request decoration support​
-      ​uses​: ​highbyte/sonarscan-dotnet@2.0​
-      ​with​:
-        ​sonarProjectKey​: ​​LogzioNLogExtension
-        ​sonarProjectName​:  ​LogzioNLogExtensions​
-        ​sonarOrganization​: ​afaq-khan
-        ​dotnetBuildArguments​: ​./src​
-        ​dotnetTestArguments​: ​./tests --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover​
-        ​sonarBeginArguments​: ​/d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"
-    env​:
-    ​  SONAR_TOKEN​: ​${{ secrets.SONAR_TOKEN }}​
-    ​  GITHUB_TOKEN​: ​${{ secrets.GITHUB_TOKEN }}
+    - name: Sonar Scan
+      uses: highbyte/sonarscan-dotnet@2.0
+      with:
+        sonarProjectKey: LogzioNLogExtensions     
+        sonarProjectName:  LogzioNLogExtensions
+        sonarOrganization: afaq-khan
+        dotnetBuildArguments​: ​./src​
+        dotnetTestArguments: --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"        
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
