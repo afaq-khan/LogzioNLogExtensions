@@ -1,4 +1,5 @@
 # Logzio.NLog.Extensions
+[![.NET](https://github.com/afaq-khan/LogzioNLogExtensions/actions/workflows/dotnet.yml/badge.svg)](https://github.com/afaq-khan/LogzioNLogExtensions/actions/workflows/dotnet.yml)
 [![Nuget](https://img.shields.io/nuget/v/Logzio.NLog.Extensions?style=plastic)](https://www.nuget.org/packages/Logzio.NLog.Extensions)
 
 A logging extension to simplify configuration of [Logz.io's NLog package](https://www.nuget.org/packages/Logzio.DotNet.NLog) for sending log entries to Logz.io
