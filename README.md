@@ -37,8 +37,9 @@ Install the package from the Package Manager Console:
 ```
 ### Code
 ```csharp
-IServiceCollection services = new ServiceCollection();
-services.AddLogging(builder =>
-    builder.AddLogzioNLog(
-        configuration.GetSection("Logging").GetSection("LogzioNLog").GetSection("Options")));
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddLogging(loggingBuilder =>
+    loggingBuilder.AddLogzioNLog(builder.Configuration.GetSection("Logging").GetSection("LogzioNLog")
+        .GetSection("Options")));
 ```
