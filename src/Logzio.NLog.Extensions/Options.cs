@@ -12,6 +12,7 @@ namespace Logzio.NLog.Extensions
         public TimeSpan BufferTimeOut { get; set; }
         public int RetriesMaxAttempts { get; set; }
         public TimeSpan RetriesInterval { get; set; }
-        public bool IsDebug { get; set; }
+        public bool Debug { get; set; }
+        public bool JsonKeysCamelCase { get; set; }
     }
 }

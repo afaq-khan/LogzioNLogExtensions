@@ -48,7 +48,8 @@ namespace Logzio.NLog.Extensions.Tests
                 {
                     BufferSize = 100,
                     BufferTimeOut = TimeSpan.FromSeconds(5),
-                    IsDebug = false,
+                    Debug = false,
+                    JsonKeysCamelCase = false,
                     ListenerUrl = "https://listener.logz.io:1234",
                     LogzioType = "nlog",
                     Name = "Logzio",

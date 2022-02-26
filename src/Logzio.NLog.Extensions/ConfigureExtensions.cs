@@ -51,7 +51,8 @@ namespace Logzio.NLog.Extensions
                 BufferTimeout = options.BufferTimeOut,
                 RetriesMaxAttempts = options.RetriesMaxAttempts,
                 RetriesInterval = options.RetriesInterval,
-                Debug = options.IsDebug
+                Debug = options.Debug,
+                JsonKeysCamelCase = options.JsonKeysCamelCase
             };
 
             return target;
