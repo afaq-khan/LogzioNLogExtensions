@@ -7,7 +7,7 @@
     <Title>Logzio.NLog.Extensions</Title>
     <Authors>Afaq Khan</Authors>
     <Description>A logging extension to simplify configuration of Logzio's NLog package for sending log entries to Logz.io</Description>
-    <Copyright>Copyright 2021 Afaq Khan</Copyright>
+    <Copyright>Copyright 2022 Afaq Khan</Copyright>
     <PackageProjectUrl>https://github.com/afaq-khan/LogzioNLogExtensions</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/afaq-khan/LogzioNLogExtensions</RepositoryUrl>
@@ -16,6 +16,7 @@
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.0.0</Version>
+    <PackageVersion>1.0.5</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
