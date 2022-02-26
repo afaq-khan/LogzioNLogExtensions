@@ -28,7 +28,8 @@ Install the package from the Package Manager Console:
         "BufferTimeout": "__LogzioNLog.Options.BufferTimeout__",
         "RetriesMaxAttempts": "__LogzioNLog.Options.RetriesMaxAttempts__",
         "RetriesInterval": "__LogzioNLog.Options.RetriesInterval__",
-        "Debug": "__LogzioNLog.Options.Debug__"
+        "Debug": "__LogzioNLog.Options.Debug__",
+        "JsonKeysCamelCase": "__LogzioNLog.Options.JsonKeysCamelCase__"
       }
     }
   }
