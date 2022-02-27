@@ -28,7 +28,8 @@ Install the package from the Package Manager Console:
         "BufferTimeout": "__LogzioNLog.Options.BufferTimeout__",
         "RetriesMaxAttempts": "__LogzioNLog.Options.RetriesMaxAttempts__",
         "RetriesInterval": "__LogzioNLog.Options.RetriesInterval__",
-        "Debug": "__LogzioNLog.Options.Debug__"
+        "Debug": "__LogzioNLog.Options.Debug__",
+        "JsonKeysCamelCase": "__LogzioNLog.Options.JsonKeysCamelCase__"
       }
     }
   }
@@ -36,8 +37,9 @@ Install the package from the Package Manager Console:
 ```
 ### Code
 ```csharp
-IServiceCollection services = new ServiceCollection();
-services.AddLogging(builder =>
-    builder.AddLogzioNLog(
-        configuration.GetSection("Logging").GetSection("LogzioNLog").GetSection("Options")));
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddLogging(loggingBuilder =>
+    loggingBuilder.AddLogzioNLog(builder.Configuration.GetSection("Logging").GetSection("LogzioNLog")
+        .GetSection("Options")));
 ```
